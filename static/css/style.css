@@ -1,0 +1,150 @@
+* {
+    color: #3F4C5A;
+}
+
+h6 {
+    margin-bottom: 0px;
+}
+
+p {
+    font-size: 12px;
+}
+
+/* admin.html */
+button {
+    background-color: green;
+    color: white;
+}
+
+#header {
+    height: 62px;
+    display: block;
+    padding: 10px;
+    min-width: 311px;
+    background-color: #3F4C5A;
+}
+
+.white_text {
+    color: white;
+}
+
+.no_block {
+    display: inline-block;
+}
+
+.scootch {
+    vertical-align: top;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+#log_out_box {
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+#welcome_message {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#admin_box {
+    width: 800px;
+    display: inline-block;
+    padding: 15px;
+    vertical-align: top;
+    background-color: white;
+    margin-left: 25px;
+}
+
+#right_body {
+    width: 450px;
+    display: inline-block;
+    padding: 15px;
+    vertical-align: top;
+    margin-left: -5px;
+    background-color: white;
+}
+
+.table {
+    display: table;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.red {
+    background-color: red;
+}
+
+/* error.html */
+
+#container {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 15px;
+    vertical-align: top;
+}
+
+/* inbox.html */
+
+#left_body {
+    width: 450px;
+    display: inline-block;
+    padding: 15px;
+    vertical-align: top;
+    background-color: white;
+    margin-left: 25px;
+}
+
+.td2 {
+    display: table-cell;
+    vertical-align: top;
+    width: 360px;
+}
+
+.td1 {
+    display: table-cell;
+    width: 100px;
+    vertical-align: top;
+    text-align: right;
+}
+
+.scootch1{
+    margin-right: 8px;
+}
+
+/* index.html */
+#left_body_index {
+    width: 547px;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 15px;
+    vertical-align: top;
+}
+
+#right_body_index {
+    width: 415px;
+    display: inline-block;
+    margin-left: -5px;
+    padding: 15px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+td {
+    text-align: right;
+}
+
+label {
+    margin-top: 0px;
+    margin-bottom: 2px;
+}

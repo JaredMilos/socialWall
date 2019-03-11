@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SocialWall</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+</head>
+
+<body>
+    <div id='header'>
+        <div class="no_block">
+            <h2 class="white_text no_block">SocialWall - Admin Page</h2>
+            <form action="/inbox" method="GET" class="no_block scootch"><button type="submit">Go to Inbox</button></form>
+        </div>
+
+        <div id='log_out_box'>
+            <div class="white_text" id='welcome_message'>
+                <h5>Welcome, {{session['first_name']}}</h5>
+            </div>
+            <form action="/log_out" method="POST" class="no_block "><button type="submit">Log Out</button></form>
+        </div>
+    </div>
+    <div id='admin_box'>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        {% for users in user_list %}
+            {% if users['id'] != session['user_id'] %}
+            <tr>
+                <td>{{ users['id'] }}</td>
+                <td>{{ users['first_name'] }} {{ users['last_name'] }}</td>
+                <td>{{ users['email'] }}</td>
+                {% if users['admin_level'] == 9 %}
+                    <td>Admin</td>
+                    <td>
+                        <form class="no_block" action="/remove" method="POST"><input type="hidden" name="id" value="{{ users['id'] }}"><button class="red">Remove</button></form>
+                        <form class="no_block" action="/remove_admin" method="POST"><input type="hidden" name="id" value="{{ users['id'] }}"><button class="red">Remove Admin Access</button></form>
+                    </td>
+                {% else %}
+                    <td>User</td>
+                    <td>
+                        <form class="no_block" action="/remove" method="POST"><input type="hidden" name="id" value="{{ users['id'] }}"><button class="red">Remove</button></form>
+                        <form class="no_block" action="/make_admin" method="POST"><input type="hidden" name="id" value="{{ users['id'] }}"><button>Make Admin</button></form>
+                    </td>
+                {% endif %}
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
